@@ -17,48 +17,61 @@ body {
       width: 100%;
       height: $h;
       @include menu_flex();
+      
+      .main_menu{
+        width: 60%;
+        height: 100%;
+        @include menu_flex();
+        cursor: pointer;
+        &:hover{
+          background-color: $bg;
+
+          div{
+            color: white;
+          }
+          div:first-child{
+            color: black;
+          }
+        }
+      
+        &:not(:first-child):hover div{
+          color: black;
+        }
+
+        & div:first-child{
+          color: black;
+
+          &:hover{
+            color: white!important;
+          }
+        }
+        
+
+        
+
+        
+
+        div{
+          height: 100%;
+          font-size: 25px;
+          font-weight: 600;
+          padding-right: 20px;
+          color: $bg;
+          line-height: 50px;
+
+        }
+
+        
+
+      }
 
       .menu_list{
         display: none;
       }
 
-      .title{
-        width: 180px;
-        height: $h;
-        padding-top: 17px;
-        padding-left: 12px;
-        font-weight: 600;
-        font-size: 20px;
-        cursor: pointer;
-        &:hover{
-          background-color: $bg;
-          color: white;
-        }
-      }
-
-      .side_menu{
-        @include menu_flex();
-        width: 70%;
-        height: $h;
-        cursor: pointer;
-        &:hover{
-          background-color: $bg;
-          div{
-            color: white;
-          }
-        }
-
-
-        div{
-          font-size: 25px;
-          font-weight: 600;
-          padding-right: 20px;
-          color: $bg;
-        }
-      }
       .side_menu2{
         @include menu_flex();
-        width: 30%;
+        width: 40%;
         height: $h;
       }
     }
