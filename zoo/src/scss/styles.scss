@@ -7,75 +7,85 @@
 }
 
 body {
-  font-family: "Union-Regular",Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-  header{
-    width: 100vw;
-    height: 48px;
  
-    .menu{
-      width: 100%;
-      height: $h;
-      @include menu_flex();
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  nav{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-size: 32px;
+    text-transform: lowercase;
+    ul{
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      &:hover{
+        background-color: gainsboro;
+      }
       
-      .main_menu{
-        width: 60%;
-        height: 100%;
-        @include menu_flex();
+      li{
         cursor: pointer;
-        &:hover{
-          background-color: $bg;
-
-          div{
-            color: white;
-          }
-          div:first-child{
-            color: black;
-          }
-        }
-      
-        &:not(:first-child):hover div{
-          color: black;
-        }
-
-        & div:first-child{
-          color: black;
-
-          &:hover{
-            color: white!important;
-          }
-        }
-        
-
-        
-
-        
-
-        div{
-          height: 100%;
-          font-size: 25px;
-          font-weight: 600;
-          padding-right: 20px;
-          color: $bg;
-          line-height: 50px;
-
-        }
-
-        
-
+        margin-right: 50px;
       }
-
-      .menu_list{
-        display: none;
-      }
-
-      .side_menu2{
-        @include menu_flex();
-        width: 40%;
-        height: $h;
+      &:first-child{
+        &:hover{  
+          li:not(:first-child){
+            color: white!important
+            ;
+          }
+        }
+        li{
+          &:first-child{
+            margin-right: 120px;
+          }
+          
+        }
+        &:not(:first-child){
+          color: gainsboro;
+          margin-right: 50px;
+          
+        }
       }
     }
   }
 }
 
+main{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 45vh;
+  article{
+    cursor: pointer;
+    height: 100%;
+    display: grid;
+    grid-template-rows: minmax(0,10fr) .8fr; 
+    img{
+      min-width: 100%;
+      height: 100%;
+    }
+    div{
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      padding-left: 10px;
+      h3{
+        font-size: 14px;
+      }
+    }
+  }
+}
 
