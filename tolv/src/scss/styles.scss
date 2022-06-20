@@ -74,10 +74,57 @@ header{
     }
     span{
       font-size: 12px;
-      a{
-        font-weight: 600;
-        color: $orange;
-      }
+    }
+  }
+}
+a{
+  font-weight: 600;
+  color: $orange;
+}
+
+.banner{
+  background-color: #efcb56;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3{
+    font-family: "Yrsa";
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+  p{
+    width: 50%;
+    text-align: center;
+    font-family: "Yrsa";
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  span{
+    font-size: 12px;
+  }
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50vh;
+  .gallery_item{
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://source.unsplash.com/random/");
+    transform: all 0.2 linear;
+    cursor: pointer;
+    overflow: hidden;
+    &:first-child,
+    &:nth-child(5),
+    &:nth-child(8),
+    &:nth-child(10){
+      grid-column-start: span 2;
+    }
+    &:hover{
+      filter: blur(50px);
     }
   }
 }
